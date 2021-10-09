@@ -56,3 +56,67 @@ doc/**/*.pdf
 git diff --staged
 ```
 
+- **删除文件**
+
+```bash
+# 强制删除Git跟踪的文件
+git rm -f FILE
+# 删除Git跟踪的文件
+git rm FILE # rm FILE & git add FILE
+# 删除Git跟踪的文件但是保留本地文件
+git rm --cached FILE
+```
+
+- **重命名文件**
+
+```bash
+git mv FILE FILENEW
+# 也可以直接使用如下方式
+mv FILE FILENEW & git add .
+mv FILE FILENEW & git add FILE FILENEW
+```
+
+- **查看提交记录**
+	- [常用格式](https://git-scm.com/book/zh/v2/ch00/pretty_format) 
+
+```bash
+# 普通查看
+git log
+# 显示修改
+git log -p/--patch
+# 显示最近两条
+git log -2
+# 简略信息
+git log --stat
+# 添加输出格式
+git log --pretty=PAEAMETERS
+# 自定义输出格式
+git log --pretty=format:""
+```
+
+- **撤销提交信息**
+
+```bash
+git commit --amend
+```
+
+- **多个远程仓库**
+
+```bash
+# 查看远程仓库
+git remote
+# 查看远程仓库详情
+git remote -v
+# 添加远程仓库
+git remote add REPONAME REPOURL
+# 重命名
+git remote rename REPONAME NEWREPONAME
+# 删除
+git remote remove REPONAME
+# 拉去另一个仓库中的修改
+git fetch REPONAME
+# 推送到远程仓库
+git push REPONAME main
+# 查看远程仓库详细信息
+git remote show REPONAME
+```
