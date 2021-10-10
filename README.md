@@ -113,10 +113,70 @@ git remote add REPONAME REPOURL
 git remote rename REPONAME NEWREPONAME
 # 删除
 git remote remove REPONAME
-# 拉去另一个仓库中的修改
+# 拉取另一个仓库中的修改
 git fetch REPONAME
 # 推送到远程仓库
 git push REPONAME main
 # 查看远程仓库详细信息
 git remote show REPONAME
 ```
+- **标签Tag**
+
+```bash
+# 创建附注标签
+git tag -a TAGNAME
+# 创建轻量标签
+git tag TAGNAME
+# 后期打标签
+git tag -a TAGNAME HASHVALUE
+# 共享标签到仓库
+git push REPONAME TAGNAME
+# 删除本地标签
+git tag -d TAGNAME
+# 删除仓库标签
+git push REPONAME --delete TAGNAME
+```
+
+- **分支**
+
+```bash
+# 创建分支
+git branch BRANCHNAME
+# 切换分支
+git checkout BRANCHNAME
+# 创建并切换
+git checkout -b BRANCHNAME
+# 删除本地分支
+git branch -d BRANCHNAME
+# 删除远程分支
+git push REPONAME --dalete BRANCHNAME
+# 提交分支
+git push REPONAME BRANCHNAME
+# 查看分支信息
+git log --oneline --decorate
+# 图形化查看分支信息
+git log --oneline --decorate --graph --all
+# 合并分支
+git merge BRANCHNAME
+# 查看完成合并分支
+git branch --merged
+# 查看未完成合并分支
+git branch --no-merged
+```
+
+- **远程分支**
+
+```bash
+# 添加远程分支
+git remote add REMOTENAME REMOTEURL
+# 更新远程分支
+git fetch REMOTENAME
+# 创建远程分支的本地分支
+git checkout -b BRANCHNAME REMOTENAME/BRANCHNAME
+# 合并远程分支到本地分支
+git merge BRANCHNAME
+# 拉取远程分支
+git pull = git fetch REMOTENAME/BRANCHNAME & git merge BRANCHNAME
+```
+
+
